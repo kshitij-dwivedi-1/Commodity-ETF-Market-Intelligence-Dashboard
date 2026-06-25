@@ -102,10 +102,6 @@ python -m pytest
 
 The tests cover fetch retry behavior, response normalization, validation/quarantine logic, SQLite-backed upsert behavior, and batch chunking.
 
-## Demo Output
-
-Generate deterministic demo artifacts without API keys or MySQL:
-
 ```powershell
 python scripts\generate_demo_assets.py
 ```
