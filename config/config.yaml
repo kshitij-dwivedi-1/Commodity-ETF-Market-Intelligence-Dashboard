@@ -1,0 +1,22 @@
+database:
+  host: ${DB_HOST:-localhost}
+  port: ${DB_PORT:-3306}
+  name: ${DB_NAME:-market_intelligence}
+  user: ${DB_USER:-etl_user}
+  password: ${DB_PASSWORD:-changeme}
+  pool_size: 5
+
+scheduler:
+  refresh_interval_minutes: ${REFRESH_INTERVAL_MINUTES:-15}
+  health_port: ${HEALTH_PORT:-8080}
+
+etl:
+  request_timeout_seconds: 10
+  retry_attempts: 3
+  retry_base_delay_seconds: 2
+  batch_size: 1000
+
+analytics:
+  anomaly_zscore_threshold: ${ANOMALY_ZSCORE_THRESHOLD:-3.0}
+  correlation_window_days: ${CORRELATION_WINDOW_DAYS:-30}
+  forecast_horizon_days: ${FORECAST_HORIZON_DAYS:-7}

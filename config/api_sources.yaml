@@ -1,0 +1,148 @@
+sources:
+  - name: Gold London Fixing
+    type: commodity
+    symbol: GOLD
+    api_provider: alpha_vantage
+    endpoint_url: https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GLD&apikey=${ALPHA_VANTAGE_KEY}
+    response_path: Time Series (Daily)
+    frequency_minutes: 15
+  - name: Silver London Fixing
+    type: commodity
+    symbol: SILVER
+    api_provider: alpha_vantage
+    endpoint_url: https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SLV&apikey=${ALPHA_VANTAGE_KEY}
+    response_path: Time Series (Daily)
+    frequency_minutes: 15
+  - name: WTI Crude Oil
+    type: commodity
+    symbol: WTI
+    api_provider: eia
+    endpoint_url: https://api.eia.gov/v2/petroleum/pri/spt/data/?frequency=daily&data[0]=value&facets[series][]=RWTC&api_key=${EIA_API_KEY}
+    response_path: response.data
+    frequency_minutes: 15
+  - name: Brent Crude Oil
+    type: commodity
+    symbol: BRENT
+    api_provider: eia
+    endpoint_url: https://api.eia.gov/v2/petroleum/pri/spt/data/?frequency=daily&data[0]=value&facets[series][]=RBRTE&api_key=${EIA_API_KEY}
+    response_path: response.data
+    frequency_minutes: 15
+  - name: Natural Gas Henry Hub
+    type: commodity
+    symbol: NATGAS
+    api_provider: eia
+    endpoint_url: https://api.eia.gov/v2/natural-gas/pri/fut/data/?frequency=daily&data[0]=value&api_key=${EIA_API_KEY}
+    response_path: response.data
+    frequency_minutes: 15
+  - name: Copper
+    type: commodity
+    symbol: COPPER
+    api_provider: twelve_data
+    endpoint_url: https://api.twelvedata.com/time_series?symbol=HG=F&interval=1day&apikey=${TWELVE_DATA_KEY}
+    response_path: values
+    frequency_minutes: 15
+  - name: Wheat
+    type: commodity
+    symbol: WHEAT
+    api_provider: usda_nass
+    endpoint_url: https://quickstats.nass.usda.gov/api/api_GET/?key=${USDA_NASS_KEY}&commodity_desc=WHEAT&format=JSON
+    response_path: data
+    frequency_minutes: 15
+  - name: Corn
+    type: commodity
+    symbol: CORN
+    api_provider: usda_nass
+    endpoint_url: https://quickstats.nass.usda.gov/api/api_GET/?key=${USDA_NASS_KEY}&commodity_desc=CORN&format=JSON
+    response_path: data
+    frequency_minutes: 15
+  - name: Soybeans
+    type: commodity
+    symbol: SOYBEANS
+    api_provider: usda_nass
+    endpoint_url: https://quickstats.nass.usda.gov/api/api_GET/?key=${USDA_NASS_KEY}&commodity_desc=SOYBEANS&format=JSON
+    response_path: data
+    frequency_minutes: 15
+  - name: Coffee
+    type: commodity
+    symbol: COFFEE
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: SPDR S&P 500 ETF
+    type: etf
+    symbol: SPY
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: Invesco QQQ ETF
+    type: etf
+    symbol: QQQ
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: SPDR Gold Shares
+    type: etf
+    symbol: GLD
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: iShares Silver Trust
+    type: etf
+    symbol: SLV
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: United States Oil Fund
+    type: etf
+    symbol: USO
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: Energy Select Sector SPDR
+    type: etf
+    symbol: XLE
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: iShares Gold Trust
+    type: etf
+    symbol: IAU
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: Invesco Optimum Yield Commodity Strategy
+    type: etf
+    symbol: PDBC
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: iPath Bloomberg Commodity Index
+    type: etf
+    symbol: DJP
+    api_provider: yahoo_finance
+    endpoint_url: ""
+    response_path: records
+    frequency_minutes: 15
+  - name: Metals API Gold Spot
+    type: commodity
+    symbol: XAU
+    api_provider: metals_api
+    endpoint_url: https://metals-api.com/api/latest?access_key=${METALS_API_KEY}&base=USD&symbols=XAU
+    response_path: rates.XAU
+    frequency_minutes: 15
+  - name: Open Exchange Rates USD
+    type: commodity
+    symbol: USD_FX
+    api_provider: open_exchange_rates
+    endpoint_url: https://openexchangerates.org/api/latest.json?app_id=${OPEN_EXCHANGE_RATES_KEY}&base=USD
+    response_path: rates
+    frequency_minutes: 15
